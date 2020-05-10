@@ -1,5 +1,5 @@
 # leetcode-
-渣渣的开始
+# 两数之和
 class Solution:
     def twoSum(self, nums, target):
         """
