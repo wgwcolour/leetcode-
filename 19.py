@@ -1,3 +1,4 @@
+# 删除链表倒数第n个结点
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -6,6 +7,7 @@ class ListNode:
 
 # 参考题解 使用双指针，先移动指针a，使a与b间隔n，然后一起移动到a=None时，b的下一个结点即为要删除的倒数第n个结点
 # 使用哨兵，处理边界问题，防止只给了 [一个结点] 的情况
+# 这个思路用在找倒数第n个的时候真棒！
 class Solution:
     # a = [0,1,2,3,4,5,None]
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
