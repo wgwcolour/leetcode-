@@ -13,8 +13,10 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        dic = {}
+        for index, i in enumerate(nums):
+            dic[i] = index
         for i in range(len(nums)):
-            num = target-nums[i]
-            for a in range(len(nums)):
-                if nums[a] == num and i != a:
-                    return [i,a]
+            num = target - nums[i]
+            if num in dic and i != dic[num]:
+                return [i, dic[num]]
