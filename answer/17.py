@@ -8,6 +8,19 @@ class Solution:
            "5": "jkl", "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
 
     def letterCombinations(self, digits: str) -> List[str]:
+        # 利用队列
+        li = []
+        for i in digits:
+            if li:
+                for zm in li.copy():
+                    for ii in self.dic[i]:
+                        li.append(zm+ii)
+                    li.remove(zm)
+            else:
+                for ii in self.dic[i]:
+                    li.append(ii)
+        return li
+    def letterCombinations1(self, digits: str) -> List[str]:
         res = []
         temp = []
         for i in digits:
@@ -42,4 +55,4 @@ class Solution:
     #     for z in self.dic[s[0]]:
     #         self.get_result(s[1:], st+z)
 if __name__ == '__main__':
-    print(Solution().letterCombinations("234"))
+    print(Solution().letterCombinations("23"))
